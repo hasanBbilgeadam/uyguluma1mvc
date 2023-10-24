@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Student>
+
+
+<div class="row m-5 p-3">
+
+    <h2 class="text-primary text-center">Öğrenciler</h2>
+    <div class="col-md-10 mx-auto">
+
+
+       
+        <img src="~/images/pikaa.jpg"/>
+
+
+        <table class="table  table-hover">
+
+            <thead>
+
+                <tr>
+                    <th>ad</th>
+                    <th>cinsiyet</th>
+                    <th>vize1</th>
+                    <th>vize2</th>
+                    <th>ortalama</th>
+                    <th>status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @{
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                            
+                            @*kişi erkekse erkek resmi kadın ise kadın resmi gösterilmesi gerek*@
+
+                            </td>
+                            <td>@item.Name</td>
+                            <td>@item.Vize1</td>
+                            <td>@item.Vize2</td>
+                            <td>@{float ort = (float)(item.Vize1 + item.Vize2) / 2;}  @ort</td>
+                            <td>@(ort>=50 ? "geçti":"kaldı")</td>
+
+                        </tr>
+                    }
+                    
+
+                }
+
+
+            </tbody>
+
+        </table>
+        
+
+
+    </div>
+
+
+</div>
