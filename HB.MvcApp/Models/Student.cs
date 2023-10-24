@@ -2,8 +2,11 @@
 {
     public class Student
     {
-    
 
+        public Student()
+        {
+            
+        }
         public Student(string name, int vize1, int vize2)
         {
             Name = name;

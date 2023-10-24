@@ -1,0 +1,12 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Student
+<ul class="list-group">
+    <li class="list-group-item">@Model.Name</li>
+    <li class="list-group-item">@Model.Vize1</li>
+    <li class="list-group-item">@Model.Vize2</li>
+    <li class="list-group-item">@(!Model.Cinsyet ? "erkek":"kadın")</li>
+ </ul>

@@ -14,6 +14,14 @@ namespace HB.MvcApp.Controllers
             new("burak",20,70,false),
             new("burcu",70,70,true),
 
+            new()
+            {
+                Cinsyet=false,
+                Name="ozan",
+                Vize1=12,
+                Vize2=212
+            }
+
 
         };
 
@@ -21,6 +29,12 @@ namespace HB.MvcApp.Controllers
         public IActionResult Index()
         {
             return View(list);
+        }
+        public IActionResult GetByID(string id)
+        {
+
+            var data = list.Where(x => x.Name == id).FirstOrDefault();
+            return View(data);
         }
     }
 }
